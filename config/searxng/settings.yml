@@ -1,0 +1,46 @@
+general:
+  debug: false
+  instance_name: "DevKube SearXNG"
+  
+search:
+  formats:
+    - html
+    - json
+  default_format: json
+  
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "your_secret_key_here"  # Change this in production
+  base_url: http://localhost:8080/
+  
+ui:
+  static_path: ""
+  templates_path: ""
+  default_theme: simple
+  
+redis:
+  url: redis://redis:6379/0
+
+outgoing:
+  request_timeout: 5.0
+  max_request_timeout: 15.0
+
+doi_resolvers:
+  oadoi.org: 'https://oadoi.org/'
+  doi.org: 'https://doi.org/'
+  doai.io: 'https://doai.io/'
+default_doi_resolver: 'doi.org'
+
+engines:
+  - name: google
+    engine: google
+    shortcut: g
+    
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: d
+    
+  - name: wikipedia
+    engine: wikipedia
+    shortcut: w
